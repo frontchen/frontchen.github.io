@@ -46,25 +46,26 @@ jobs:
           # 这是文档部署到的分支名称
           branch: gh-pages
           folder: src/.vuepress/dist
-          # 这里把打包后的页面 同步到gitee仓库用来发布pages服务的分支
-        - name: Sync to Gitee Code
+        # 这里把打包后的页面 同步到gitee仓库用来发布pages服务的分支
+      - name: Sync to Gitee Code
         uses: wearerequired/git-mirror-action@master
         env:
           # 注意在 Settings->Secrets 配置 GITEE_RSA_PRIVATE_KEY
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
         with:
           # 注意替换为你的 GitHub 源仓库地址
-          source-repo: "git@github.com:frontchen/frontchen.github.io.git main"
+          source-repo: 'git@github.com:frontchen/frontchen.github.io.git main'
           # 注意替换为你的 Gitee 目标仓库地址
-          destination-repo: "git@gitee.com:magicBegin/blog.git master"
+          destination-repo: 'git@gitee.com:magicBegin/blog.git master'
+
       # 这里把打包后的页面 同步到gitee仓库用来发布pages服务的分支
-        - name: Sync to Gitee Pages
+      - name: Sync to Gitee Pages
         uses: wearerequired/git-mirror-action@master
         env:
           # 注意在 Settings->Secrets 配置 GITEE_RSA_PRIVATE_KEY
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
         with:
           # 注意替换为你的 GitHub 源仓库地址
-          source-repo: "git@github.com:frontchen/frontchen.github.io.git"
+          source-repo: 'git@github.com:frontchen/frontchen.github.io.git'
           # 注意替换为你的 Gitee 目标仓库地址
-          destination-repo: "git@gitee.com:magicBegin/blog.git gh-pages"
+          destination-repo: 'git@gitee.com:magicBegin/blog.git gh-pages'
