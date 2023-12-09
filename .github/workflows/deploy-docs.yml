@@ -54,7 +54,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
         with:
           # 注意替换为你的 GitHub 源仓库地址
-          source-repo: 'git@github.com:frontchen/frontchen.github.io.git main'
+          source-repo: 'https://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@github.com/frontchen/frontchen.github.io.git main'
           # 注意替换为你的 Gitee 目标仓库地址
           destination-repo: 'git@gitee.com:magicBegin/blog.git master'
 
@@ -66,6 +66,6 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
         with:
           # 注意替换为你的 GitHub 源仓库地址
-          source-repo: 'git@github.com:frontchen/frontchen.github.io.git'
+          source-repo: 'https://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@github.com/frontchen/frontchen.github.io.git'
           # 注意替换为你的 Gitee 目标仓库地址
           destination-repo: 'git@gitee.com:magicBegin/blog.git gh-pages'
