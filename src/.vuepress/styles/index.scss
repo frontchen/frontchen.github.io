@@ -1,0 +1,43 @@
+// place your custom styles herend
+@font-face {
+  font-family: Sans;
+  src: url('/Sans.otf') format('opentype');
+}
+body,
+.title,
+.blogger-info,
+.description {
+  font-family: Sans !important;
+}
+@mixin typing($count: 0, $duration: 0, $delay: 0) {
+  overflow: hidden;
+  border-right: 1px solid transparent;
+  width: #{$count + 1}ch;
+  white-space: nowrap;
+  animation: typing #{$duration}s steps($count + 1) #{$delay}s infinite
+      backwards,
+    caret 500ms steps(1) #{$delay}s infinite forwards;
+}
+.description {
+  font-weight: bold;
+  font-size: 30px;
+  @include typing(11, 3);
+}
+@keyframes caret {
+  50% {
+    border-right-color: currentColor;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+.logo,
+.hero-image {
+  border-radius: 5px;
+}
+div.blog-hero h1 {
+  font-weight: bold;
+  font-style: italic;
+}

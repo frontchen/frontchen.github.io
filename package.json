@@ -1,0 +1,30 @@
+{
+  "name": "czblog",
+  "version": "2.0.0",
+  "description": "Mr.Chen 's blog",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "vuepress build src",
+    "clean-dev": "vuepress dev src --clean-cache",
+    "dev": "vuepress dev src",
+    "update-package": "pnpm dlx vp-update",
+    "push": "bash publish.sh && node publish.cjs",
+    "upload": "bash upload-records.sh"
+  },
+  "devDependencies": {
+    "@vuepress/client": "2.0.0-rc.0",
+    "vue": "^3.3.9",
+    "vuepress": "2.0.0-rc.0",
+    "vuepress-plugin-search-pro": "2.0.0-rc.2",
+    "vuepress-theme-hope": "2.0.0-rc.2"
+  },
+  "dependencies": {
+    "add": "^2.0.6",
+    "axios": "^1.6.2",
+    "element-plus": "^2.4.3",
+    "markdown-it-disable-url-encode": "^1.0.1",
+    "puppeteer": "^21.6.0",
+    "vite-plugin-resolve-externals": "^0.2.2"
+  }
+}
